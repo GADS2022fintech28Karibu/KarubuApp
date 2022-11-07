@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Karibu App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstOnBoardStatement">Welcome here. Thank you for visiting our Hotel. Here, you will find a quality service that you really long for. All dishes are available at your own pleasure.</string>
+    <string name="karibu">Welcome to Karibu Hotel</string>
+    <string name="SecondOnboard">Come one, come all</string>
+</resources>
