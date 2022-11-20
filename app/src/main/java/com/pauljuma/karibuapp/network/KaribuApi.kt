@@ -6,9 +6,9 @@ import retrofit2.http.GET
 
 interface KaribuApi {
 
-    @GET("v2/Continents")
+    @GET("continents")
     suspend fun getFeaturedPartners(): List<FeaturedPartnersItem>
 
-    @GET("v2/Characters")
+    @GET("characters")
     suspend fun getFavoriteItems(): List<FavoriteMealsItem>
 }
