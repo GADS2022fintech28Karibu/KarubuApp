@@ -5,4 +5,8 @@
     <string name="firstOnBoardStatement">Welcome here. Thank you for visiting our Hotel. Here, you will find a quality service that you really long for. All dishes are available at your own pleasure.</string>
     <string name="karibu">Welcome to Karibu Hotel</string>
     <string name="SecondOnboard">Come one, come all</string>
+    <string name="Username">Username</string>
+    <string name="password">Password</string>
+    <string name="username">UserName</string>
+    <string name="Password">Password</string>
 </resources>
