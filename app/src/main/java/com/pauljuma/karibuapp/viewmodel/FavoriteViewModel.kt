@@ -12,12 +12,10 @@ import kotlinx.coroutines.launch
 class FavoriteViewModel(val repository: KaribuRepository) : ViewModel() {
     val featuredPartners: MutableLiveData<List<FeaturedPartnersItem>> = MutableLiveData()
     val favoriteMeals: MutableLiveData<List<FavoriteMealsItem>> = MutableLiveData()
-    val cartItem: MutableLiveData<List<CartItem>> = MutableLiveData()
 
     init {
         getFeaturedPartnersItems()
         getFavoriteMealsItem()
-        getCartItem()
     }
 
     private fun getFeaturedPartnersItems() = viewModelScope.launch {
@@ -28,14 +26,5 @@ class FavoriteViewModel(val repository: KaribuRepository) : ViewModel() {
     fun getFavoriteMealsItem() = viewModelScope.launch {
         val response = repository.getFavoriteItem()
         favoriteMeals.value = response
-    }
-
-   fun addToCart(cartItem: CartItem) = viewModelScope.launch {
-       repository.addCartItem(cartItem)
-   }
-
-    fun getCartItem() = viewModelScope.launch {
-        val response = repository.getCartItem()
-        cartItem.value = response
     }
 }

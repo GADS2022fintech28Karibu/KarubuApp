@@ -47,8 +47,6 @@ class FavoriteMealsAdapter : RecyclerView.Adapter<FavoriteMealsAdapter.FavoriteM
             this.currentItem = favoriteMealsItem
             this.currentPosition = itemPosition
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteMealsAdapterViewHolder {
@@ -63,7 +61,7 @@ class FavoriteMealsAdapter : RecyclerView.Adapter<FavoriteMealsAdapter.FavoriteM
         holder.bind(favoriteItem, position)
         holder.itemView.btnAddToCart.setOnClickListener {
             listener?.invoke(holder.itemView, favoriteMeal[position], position)
-            Toast.makeText(holder.itemView.context, "Clicked", Toast.LENGTH_LONG).show()
+            Toast.makeText(holder.itemView.context, "Clicked", Toast.LENGTH_SHORT).show()
         }
     }
 

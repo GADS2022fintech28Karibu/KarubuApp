@@ -18,17 +18,19 @@ class KaribuRepository(val db: AppDatabase) {
     }
 
     suspend fun getFavoriteItem(): List<FavoriteMealsItem> {
-        return KaribuApiInstance.api.getFavoriteItems()
+        val response = KaribuApiInstance.api.getFavoriteItems()
+        //store in local database
+        response.forEach{
+            db.getFavoriteMealDao().addToFavoriteMeal(it)
+        }
+        return db.getFavoriteMealDao().getAllFavoriteMeal()
     }
 
-    suspend fun upsert(favoriteMealsItem: FavoriteMealsItem) =
+    suspend fun addFavoriteMeal(favoriteMealsItem: FavoriteMealsItem) =
         db.getFavoriteMealDao().addToFavoriteMeal(favoriteMealsItem)
 
-    suspend fun delete(favoriteMealsItem: FavoriteMealsItem) =
-        db.getFavoriteMealDao().deleteFavorite(favoriteMealsItem)
-
-    fun getAllFavorite() = db.getFavoriteMealDao().getAllFavoriteMeal()
-
+    suspend fun delete(cartItem: CartItem) =
+        db.getFavoriteMealDao().deleteFavorite(cartItem)
     suspend fun addCartItem(cartItem: CartItem){
         val dbItem = db.getFavoriteMealDao().getCartItem(cartItem.id)
         if (dbItem == null){
@@ -39,7 +41,7 @@ class KaribuRepository(val db: AppDatabase) {
         }
     }
 
-    suspend fun getCartItem(): List<CartItem> = db.getFavoriteMealDao().getAllCartItem()
+    fun getCartItem(): List<CartItem> = db.getFavoriteMealDao().getAllCartItem()
     suspend fun getProduct(): List<FavoriteMealsItem> = db.getFavoriteMealDao().getAllFavoriteMeal()
 
 }

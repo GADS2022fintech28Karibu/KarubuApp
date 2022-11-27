@@ -8,15 +8,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pauljuma.karibuapp.MainActivity
 import com.pauljuma.karibuapp.adapters.BasketAdapter
+import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.databinding.FragmentBasketBinding
-import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
+import com.pauljuma.karibuapp.viewmodel.CartViewModel
 import kotlinx.android.synthetic.main.fragment_basket.*
 
 class BasketFragment() : Fragment() {
 
     lateinit var binding: FragmentBasketBinding
-    private val basketAdapter: BasketAdapter by lazy { BasketAdapter() }
-    lateinit var favoriteViewModel: FavoriteViewModel
+    private val basketAdapter: BasketAdapter by lazy { BasketAdapter(cartViewModel) }
+    lateinit var cartViewModel: CartViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,25 +26,44 @@ class BasketFragment() : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentBasketBinding.inflate(inflater, container, false)
-
-        favoriteViewModel = (activity as MainActivity).favoriteViewModel
+        cartViewModel = (activity as MainActivity).cartViewModel
         observeBasketFragment()
-        binding
+
         return binding.root
     }
 
-    fun setBasketRecycleView(){
+    fun setBasketRecycleView() {
         rvBasketItems.apply {
             hasFixedSize()
             adapter = basketAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false )
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        }
+        basketAdapter.listener = { v, i, p ->
+            cartViewModel.delete(i)
+            cartViewModel.getCartItem()
+            cartViewModel.favoriteMeals.value?.let {
+                cartViewModel.cartItems.value?.let { it1 ->
+                    basketAdapter.addToCart(
+                        it,
+                        it1
+                    )
+                }
+            }
         }
     }
 
-    fun observeBasketFragment(){
-        favoriteViewModel.favoriteMeals.observe(viewLifecycleOwner){
-            if (it.isNotEmpty()){
-                favoriteViewModel.cartItem.value?.let { it1 -> basketAdapter.addToBasket(it, it1) }
+
+    fun observeBasketFragment() {
+        cartViewModel.cartItems.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                cartViewModel.cartItems.value?.let { it1 ->
+                    cartViewModel.favoriteMeals.value?.let { it2 ->
+                        basketAdapter.addToCart(
+                            it2, it1
+                        )
+                    }
+                }
                 setBasketRecycleView()
             }
         }
@@ -50,6 +71,12 @@ class BasketFragment() : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        favoriteViewModel.getCartItem()
+        cartViewModel.getCartItem()
+    }
+
+    fun getTotal() {
+        btnPay.setOnClickListener {
+            val item = basketAdapter
+        }
     }
 }

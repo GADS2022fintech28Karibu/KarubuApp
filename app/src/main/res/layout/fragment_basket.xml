@@ -25,7 +25,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:padding="5dp"
+            android:fontFamily="@font/regular"
+            android:textSize="18sp"
             android:text="ksh 1000" />
+
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay"
+            android:textSize="18sp"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/regular"
+            android:layout_marginTop="5dp"
+            />
 
     </LinearLayout>
 

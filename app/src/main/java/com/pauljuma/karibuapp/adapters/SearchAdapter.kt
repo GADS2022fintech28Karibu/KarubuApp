@@ -4,19 +4,23 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.signature.ObjectKey
 import com.pauljuma.karibuapp.data.FavoriteMealsItem
 import com.pauljuma.karibuapp.databinding.SeachRecycleviewBinding
+import kotlinx.android.synthetic.main.seach_recycleview.view.btnAddToCart
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     lateinit var binding: SeachRecycleviewBinding
     val item: MutableList<FavoriteMealsItem> = ArrayList()
 
+    var listener: ((view: View, item: FavoriteMealsItem, position: Int) -> Unit)? = null
+
     @SuppressLint("NotifyDataSetChanged")
-    fun addFavoriteItems(data: List<FavoriteMealsItem>){
+    fun addFavoriteItems(data: List<FavoriteMealsItem>) {
         item.clear()
         item.addAll(data)
         notifyDataSetChanged()
@@ -49,6 +53,10 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val items = item[position]
         holder.bind(items, position)
+        holder.itemView.btnAddToCart.setOnClickListener {
+            listener?.invoke(holder.itemView, item[position], position)
+            Toast.makeText(holder.itemView.context, "Clicked", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {

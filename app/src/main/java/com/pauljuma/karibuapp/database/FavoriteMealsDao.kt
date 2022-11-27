@@ -22,7 +22,7 @@ interface FavoriteMealsDao {
     fun getAllCartItem(): List<CartItem>
 
     @Delete
-    suspend fun deleteFavorite(favoriteMealsItem: FavoriteMealsItem)
+    suspend fun deleteFavorite(cartItem: CartItem)
 
     @Upsert
     suspend fun addToCart(cartItem: CartItem)
