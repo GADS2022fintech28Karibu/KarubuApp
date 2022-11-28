@@ -13,11 +13,14 @@ import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModelFactory
 import kotlinx.android.synthetic.main.fragment_home.drawer_layout
 
+
+    
 class MainActivity : AppCompatActivity() {
+    lateinit var karibuViewModel: KaribuViewModel
 
     lateinit var favoriteViewModel: FavoriteViewModel
     lateinit var cartViewModel: CartViewModel
-
+  
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

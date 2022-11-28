@@ -22,8 +22,7 @@ import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
 import kotlinx.android.synthetic.main.favorites_recycleview.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment() : Fragment() {
-
+class HomeFragment : Fragment() {
     private val featuredPartnerAdapter: FeaturedPartnersAdapter by lazy { FeaturedPartnersAdapter() }
     private val favoriteMealsAdapter: FavoriteMealsAdapter by lazy { FavoriteMealsAdapter() }
 
@@ -107,6 +106,9 @@ class HomeFragment() : Fragment() {
             val cartItem = CartItem(i.id, i.id, 1)
             cartViewModel.addToCart(cartItem)
 
+        }
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
     }
 }
