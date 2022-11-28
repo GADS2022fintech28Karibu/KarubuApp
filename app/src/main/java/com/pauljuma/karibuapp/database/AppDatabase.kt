@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.data.FavoriteMealsItem
 import com.pauljuma.karibuapp.data.FeaturedPartnersItem
 
 @Database(
-    entities = [FavoriteMealsItem::class, FeaturedPartnersItem::class],
-    version = 4,
+    entities = [FavoriteMealsItem::class, FeaturedPartnersItem::class, CartItem::class],
+    version = 7,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

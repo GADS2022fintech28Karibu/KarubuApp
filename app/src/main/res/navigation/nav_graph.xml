@@ -46,6 +46,7 @@
         <action
             android:id="@+id/action_homeFragment_to_bookingDetailsFragment"
             app:destination="@id/bookingDetailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -56,7 +57,11 @@
         android:id="@+id/basketFragment2"
         android:name="com.pauljuma.karibuapp.fragments.BasketFragment"
         android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" />
+        tools:layout="@layout/fragment_basket" >
+        <argument
+            android:name="favorite"
+            app:argType="com.pauljuma.karibuapp.data.FavoriteMealsItem" />
+    </fragment>
     <fragment
         android:id="@+id/bookingDetailsFragment"
         android:name="com.pauljuma.karibuapp.fragments.BookingDetailsFragment"
