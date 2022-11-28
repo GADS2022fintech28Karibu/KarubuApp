@@ -12,8 +12,8 @@ import com.pauljuma.karibuapp.viewmodel.KaribuViewModel
 import com.pauljuma.karibuapp.viewmodel.KaribuViewModelFactory
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class MainActivity : AppCompatActivity() {
 
+class MainActivity : AppCompatActivity() {
     lateinit var karibuViewModel: KaribuViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

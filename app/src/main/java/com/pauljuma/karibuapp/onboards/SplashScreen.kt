@@ -27,8 +27,7 @@ class SplashScreen : Fragment() {
                }
                 else{
                    findNavController().navigate(R.id.action_splashScreen_to_viewPager)
-                } }, 2000
-        )
+                } }, 2000)
         return view
     }
 
@@ -37,6 +36,5 @@ class SplashScreen : Fragment() {
 
         return sharedPref.getBoolean("Finished", false)
     }
-
 
 }

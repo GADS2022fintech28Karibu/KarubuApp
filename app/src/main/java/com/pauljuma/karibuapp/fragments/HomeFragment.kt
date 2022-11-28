@@ -19,7 +19,6 @@ import com.pauljuma.karibuapp.viewmodel.KaribuViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
-
     private val featuredPartnerAdapter: FeaturedPartnersAdapter by lazy { FeaturedPartnersAdapter() }
     private val favoriteMealsAdapter: FavoriteMealsAdapter by lazy { FavoriteMealsAdapter() }
     private lateinit var viewBinding: FragmentHomeBinding
@@ -29,7 +28,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
 
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
@@ -86,6 +84,6 @@ class HomeFragment : Fragment() {
             adapter = favoriteMealsAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        }
+        } // Inflate the layout for this fragment
     }
 }
