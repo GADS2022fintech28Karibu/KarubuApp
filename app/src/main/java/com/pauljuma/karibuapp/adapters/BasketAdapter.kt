@@ -45,8 +45,6 @@ class BasketAdapter(private val viewModel: CartViewModel) :
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .skipMemoryCache(true).signature(ObjectKey(System.currentTimeMillis()))
                     .into(ivBasketItem)
-
-                val price = cartItem
             }
         }
     }
@@ -82,10 +80,6 @@ class BasketAdapter(private val viewModel: CartViewModel) :
 
     override fun getItemCount(): Int {
         return cartItem.size
-    }
-
-    fun getTotalPrice(data: List<CartItem>){
-        val size = data.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
