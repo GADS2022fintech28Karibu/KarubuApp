@@ -34,6 +34,7 @@
                     android:id="@+id/ivSlides"
                     android:layout_width="50dp"
                     android:onClick="openCloseNavigationDrawer"
+                    android:contentDescription="slideMenu"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_baseline_sort" />
 
@@ -187,12 +188,4 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/activity_drawer_item"
         />
-
-</androidx.drawerlayout.widget.DrawerLayout>
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:menu="@menu/bottom_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
