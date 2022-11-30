@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.fragment_home.drawer_layout
 
     
 class MainActivity : AppCompatActivity() {
-    lateinit var karibuViewModel: KaribuViewModel
 
     lateinit var favoriteViewModel: FavoriteViewModel
     lateinit var cartViewModel: CartViewModel
