@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.pauljuma.karibuapp.R
 import com.pauljuma.karibuapp.databinding.FragmentThirdOnBoardBinding
@@ -25,6 +26,9 @@ class ThirdOnBoard : Fragment() {
 
         viewBinding.btnNext3.setOnClickListener {
             viewPager?.currentItem = 3
+
+            findNavController().navigate(R.id.action_viewPager_to_homeFragment)
+            onBoardingFinished()
         }
 
         return viewBinding.root

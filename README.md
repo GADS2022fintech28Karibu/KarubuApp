@@ -1,13 +1,15 @@
 # KarubuApp
 Project Participants 
 
-1. James Ambole  email: jamesambole@gmail.com + 254 722 435 213 Project Team Lead
-2 .Paul Juma email:pauljuma736@gmail.com+254 758 343717
+1.James Ambole  email: jamesambole@gmail.com + 254 722 435 213 Project Team Lead
+2.Paul Juma email:pauljuma736@gmail.com+254 758 343717
 3.Aneesa Francis email:afrancis2609@gmail.com + 27832988686
-4. Trynos Tavaziva Mzondo email:trynosm68@gmail.com +263773710713
+4.Trynos Tavaziva Mzondo email:trynosm68@gmail.com +263773710713
 5.	                                  email amusarosaq27@gmail.com
-6. Richard Njego
+6. Richard Njego email:njegorich@gmail.com +256753464430
 
+# Projects Supervisor
+Samaila Anthony Malima Email: samuelmalima09@gmail.com +2347066446567
 
 
 Development Outline 

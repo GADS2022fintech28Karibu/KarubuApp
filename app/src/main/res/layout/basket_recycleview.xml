@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivBasketItem"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/holder_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBasketItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/semi_bold"
+        android:padding="5dp"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@+id/ivBasketItem"
+        app:layout_constraintTop_toTopOf="@+id/ivBasketItem" />
+
+    <TextView
+        android:id="@+id/tvBasketItemAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/semi_bold"
+        android:padding="5dp"
+        android:text="ksh 300"
+        app:layout_constraintStart_toEndOf="@+id/ivBasketItem"
+        app:layout_constraintTop_toBottomOf="@+id/tvBasketItemName" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ivBasketItem"
+        app:layout_constraintTop_toBottomOf="@+id/tvBasketItemAmount">
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/baseline_add"
+            tools:layout_editor_absoluteX="220dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/regular"
+            android:padding="3dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="266dp"
+            tools:layout_editor_absoluteY="101dp" />
+
+        <ImageView
+            android:id="@+id/ivSubtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:srcCompat="@drawable/baseline_subtract"
+            tools:layout_editor_absoluteX="356dp"
+            tools:layout_editor_absoluteY="99dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Remove"
+        android:backgroundTint="#ffcc99"
+        app:drawableLeftCompat="@drawable/ic_baseline_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBasketItem" />
+</androidx.constraintlayout.widget.ConstraintLayout>
