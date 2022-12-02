@@ -2,6 +2,7 @@ package com.pauljuma.karibuapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.pauljuma.karibuapp.fragments.LoginFragment
 import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +15,6 @@ import com.pauljuma.karibuapp.viewmodel.FavoriteViewModelFactory
 import kotlinx.android.synthetic.main.fragment_home.drawer_layout
 
 
-    
 class MainActivity : AppCompatActivity() {
 
     lateinit var favoriteViewModel: FavoriteViewModel
@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container,LoginFragment())
+            .commit()
 
         supportActionBar?.hide()
 
