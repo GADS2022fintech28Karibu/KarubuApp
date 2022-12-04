@@ -26,12 +26,14 @@
         android:fontFamily="@font/super_bold"
         android:padding="5dp"
         android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivFirstOnBoard" />
 
     <TextView
         android:id="@+id/tvFirstOnBoard"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

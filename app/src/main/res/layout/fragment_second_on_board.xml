@@ -25,6 +25,7 @@
         android:fontFamily="@font/super_bold"
         android:padding="5dp"
         android:text="@string/SecondOnboard"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivFirstOnBoard" />
@@ -38,6 +39,7 @@
         android:padding="5dp"
         android:textSize="18sp"
         android:text="@string/firstOnBoardStatement"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
