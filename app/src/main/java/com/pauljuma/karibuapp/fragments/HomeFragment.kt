@@ -71,7 +71,6 @@ class HomeFragment : Fragment() {
             if (it.isNotEmpty()) {
                 featuredPartnerAdapter.addItem(it)
                 setUpFeaturedPartnerRecycleView()
-
             }
         }
     }
@@ -106,9 +105,6 @@ class HomeFragment : Fragment() {
             val cartItem = CartItem(i.id, i.id, 1)
             cartViewModel.addToCart(cartItem)
 
-        }
-            layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
     }
 }
