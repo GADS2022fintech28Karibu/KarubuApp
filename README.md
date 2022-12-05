@@ -8,6 +8,8 @@ Project Participants
 5.	                                  email amusarosaq27@gmail.com
 6. Richard Njego email:njegorich@gmail.com +256753464430
 
+# Projects Supervisor
+Samaila Anthony Malima Email: samuelmalima09@gmail.com +2347066446567
 
 
 Development Outline 

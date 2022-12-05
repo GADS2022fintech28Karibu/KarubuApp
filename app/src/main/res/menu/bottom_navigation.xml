@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_baseline_home"/>
 
     <item
-        android:id="@+id/basketFragment2"
+        android:id="@+id/basketFragment"
         android:title=""
         android:icon="@drawable/ic_baseline_add_shopping_cart"/>
 

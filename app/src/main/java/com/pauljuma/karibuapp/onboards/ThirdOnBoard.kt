@@ -21,13 +21,13 @@ class ThirdOnBoard : Fragment() {
         // Inflate the layout for this fragment
 
         viewBinding = FragmentThirdOnBoardBinding.inflate(inflater, container, false)
-        // val view = inflater.inflate(R.layout.fragment_third_on_board, container, false)
+
         val viewPager = activity?.findViewById<ViewPager2>(R.id.vpViewPager)
 
         viewBinding.btnNext3.setOnClickListener {
             viewPager?.currentItem = 3
 
-            findNavController().navigate(R.id.action_viewPager_to_homeFragment)
+            findNavController().navigate(R.id.action_viewPager_to_loginFragment)
             onBoardingFinished()
         }
 

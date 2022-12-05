@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/myOrders"
+            android:title="My Orders"
+            android:icon="@drawable/baseline_orders"
+            />
+        <item
+            android:id="@+id/myInfo"
+            android:title="My information"
+            android:icon="@drawable/baseline_info"/>
+        <item
+            android:id="@+id/earn"
+            android:title="Share and Earn!"
+            android:icon="@drawable/baseline_card_giftcard"/>
+        <item
+            android:id="@+id/faq"
+            android:title="F.A.Q"
+            android:icon="@drawable/baseline_faq"/>
+        <item
+            android:id="@+id/notification"
+            android:title="Notification"
+            android:icon="@drawable/baseline_notifications"/>
+        <item
+            android:id="@+id/logOut"
+            android:title="Log Out"
+            android:icon="@drawable/baseline_logout"/>
+    </group>
+
+
+</menu>

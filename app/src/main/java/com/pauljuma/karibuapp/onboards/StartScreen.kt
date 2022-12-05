@@ -11,22 +11,22 @@ import androidx.navigation.fragment.findNavController
 import com.pauljuma.karibuapp.R
 
 
-class SplashScreen : Fragment() {
+class StartScreen : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
+        val view = inflater.inflate(R.layout.fragment_start_screen, container, false)
 
         Handler().postDelayed(
             {
                if (onBoardFinished()) {
-                   findNavController().navigate(R.id.action_splashScreen_to_homeFragment)
+                  findNavController().navigate(R.id.action_splashScreen_to_loginFragment)
                }
                 else{
-                   findNavController().navigate(R.id.action_splashScreen_to_viewPager)
+                  findNavController().navigate(R.id.action_splashScreen_to_viewPager)
                 } }, 2000)
         return view
     }

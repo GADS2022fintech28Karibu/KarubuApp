@@ -2,12 +2,11 @@ package com.pauljuma.karibuapp.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.pauljuma.karibuapp.R
 
-@Entity("partner_name")
-data class FeaturedPartnersItem(
-
+@Entity(tableName = "cart_item")
+data class CartItem(
     @PrimaryKey(autoGenerate = false)
     val id: String,
-    val name: String
+    val productId: String,
+    var quantity: Int
 )
