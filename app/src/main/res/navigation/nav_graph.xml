@@ -13,12 +13,12 @@
         <action
             android:id="@+id/action_splashScreen_to_viewPager"
             app:destination="@id/viewPager"
-            app:popUpTo="@id/viewPager"
+            app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashScreen_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -29,7 +29,7 @@
         <action
             android:id="@+id/action_viewPager_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/viewPager"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment

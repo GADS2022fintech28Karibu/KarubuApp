@@ -27,12 +27,12 @@ class StartScreen : Fragment() {
                }
                 else{
                   findNavController().navigate(R.id.action_splashScreen_to_viewPager)
-                } }, 2000)
+                } }, 1000)
         return view
     }
 
     private fun onBoardFinished(): Boolean{
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val sharedPref = requireActivity().getSharedPreferences("onBoardingFinished", Context.MODE_PRIVATE)
 
         return sharedPref.getBoolean("Finished", false)
     }
