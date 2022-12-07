@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pauljuma.karibuapp.MainActivity
 import com.pauljuma.karibuapp.adapters.BasketAdapter
-import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.databinding.FragmentBasketBinding
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
-import kotlinx.android.synthetic.main.fragment_basket.*
 
 class BasketFragment() : Fragment() {
 
@@ -33,7 +31,7 @@ class BasketFragment() : Fragment() {
     }
 
     fun setBasketRecycleView() {
-        rvBasketItems.apply {
+        binding.rvBasketItems.apply {
             hasFixedSize()
             adapter = basketAdapter
             layoutManager =
@@ -75,7 +73,7 @@ class BasketFragment() : Fragment() {
     }
 
     fun getTotal() {
-        btnPay.setOnClickListener {
+        binding.btnPay.setOnClickListener {
             val item = basketAdapter
         }
     }

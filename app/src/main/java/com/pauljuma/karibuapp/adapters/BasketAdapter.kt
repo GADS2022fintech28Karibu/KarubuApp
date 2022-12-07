@@ -13,7 +13,6 @@ import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.data.FavoriteMealsItem
 import com.pauljuma.karibuapp.databinding.BasketRecycleviewBinding
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
-import kotlinx.android.synthetic.main.basket_recycleview.view.*
 
 
 class BasketAdapter(private val viewModel: CartViewModel) :
@@ -31,7 +30,7 @@ class BasketAdapter(private val viewModel: CartViewModel) :
         notifyDataSetChanged()
     }
 
-    inner class BasketAdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class BasketAdapterViewHolder(val binding: BasketRecycleviewBinding) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(cartItem: CartItem, position: Int) {
             val item = basketItem.firstOrNull { it.id == cartItem.productId }
@@ -54,25 +53,28 @@ class BasketAdapter(private val viewModel: CartViewModel) :
         binding =
             BasketRecycleviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return BasketAdapterViewHolder(binding.root)
+        return BasketAdapterViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: BasketAdapterViewHolder, position: Int) {
+        val quantity = binding.tvQuantity
         val myBasketItem = cartItem[position]
         holder.bind(myBasketItem, position)
-        holder.itemView.tvQuantity.text = "{${myBasketItem.quantity}}"
-        holder.itemView.btnDelete.setOnClickListener {
+        holder.binding.tvQuantity.text = "{${myBasketItem.quantity}}"
+        //holder.itemView.tvQuantity.text = "{${myBasketItem.quantity}}"
+        //holder.itemView.btnDelete.setOnClickListener
+        holder.binding.btnDelete.setOnClickListener{
             removeItem(it, position)
             Toast.makeText(holder.itemView.context, "Removed", Toast.LENGTH_SHORT).show()
         }
 
-        holder.itemView.ivAdd.setOnClickListener {
+        holder.binding.ivAdd.setOnClickListener {
             myBasketItem.quantity++
             viewModel.addToCart(myBasketItem)
         }
 
-        holder.itemView.ivSubtract.setOnClickListener {
+        holder.binding.ivSubtract.setOnClickListener {
             myBasketItem.quantity--
             viewModel.addToCart(myBasketItem)
         }

@@ -11,7 +11,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.signature.ObjectKey
 import com.pauljuma.karibuapp.data.FavoriteMealsItem
 import com.pauljuma.karibuapp.databinding.SeachRecycleviewBinding
-import kotlinx.android.synthetic.main.seach_recycleview.view.btnAddToCart
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     lateinit var binding: SeachRecycleviewBinding
@@ -27,7 +26,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
     }
 
-    inner class SearchViewHolder(binding: SeachRecycleviewBinding) :
+    inner class SearchViewHolder(val binding: SeachRecycleviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(favoriteMealsItem: FavoriteMealsItem, position: Int) {
@@ -53,7 +52,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val items = item[position]
         holder.bind(items, position)
-        holder.itemView.btnAddToCart.setOnClickListener {
+        holder.binding.btnAddToCart.setOnClickListener {
             listener?.invoke(holder.itemView, item[position], position)
             Toast.makeText(holder.itemView.context, "Clicked", Toast.LENGTH_SHORT).show()
         }

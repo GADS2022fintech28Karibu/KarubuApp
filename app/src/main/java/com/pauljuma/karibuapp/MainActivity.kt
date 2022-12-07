@@ -6,26 +6,25 @@ import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.pauljuma.karibuapp.database.AppDatabase
+import com.pauljuma.karibuapp.databinding.ActivityMainBinding
 import com.pauljuma.karibuapp.repository.KaribuRepository
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
 import com.pauljuma.karibuapp.viewmodel.CartViewModelFactory
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModelFactory
-import kotlinx.android.synthetic.main.fragment_home.drawer_layout
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var favoriteViewModel: FavoriteViewModel
     lateinit var cartViewModel: CartViewModel
+    lateinit var binding: ActivityMainBinding
   
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        /*supportFragmentManager.beginTransaction()
-            .add(R.id.container,LoginFragment())
-            .commit()*/
 
         supportActionBar?.hide()
 
@@ -43,13 +42,5 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         BottomNavigationView.setupWithNavController(navController)
          */
-    }
-
-    fun openCloseNavigationDrawer(view: View){
-        if(drawer_layout.isDrawerOpen(GravityCompat.START)){
-            drawer_layout.closeDrawer(GravityCompat.START)
-        }else{
-            drawer_layout.openDrawer(GravityCompat.START)
-        }
     }
 }

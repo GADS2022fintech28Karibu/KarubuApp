@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pauljuma.karibuapp.MainActivity
-import com.pauljuma.karibuapp.R
 import com.pauljuma.karibuapp.adapters.SearchAdapter
 import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.databinding.FragmentSearchBinding
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
-import kotlinx.android.synthetic.main.fragment_search.rvSearch
 
 class SearchFragment : Fragment() {
     private val searchAdapter: SearchAdapter by lazy { SearchAdapter() }
@@ -36,7 +34,7 @@ class SearchFragment : Fragment() {
     }
 
     fun setUpSearchRecycleView() {
-        rvSearch.apply {
+        binding.rvSearch.apply {
             hasFixedSize()
             adapter = searchAdapter
             layoutManager =

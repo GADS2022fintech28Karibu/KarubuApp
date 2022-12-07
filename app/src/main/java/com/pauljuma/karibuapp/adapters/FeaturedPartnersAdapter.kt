@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pauljuma.karibuapp.R
 import com.pauljuma.karibuapp.data.FeaturedPartnersItem
 import com.pauljuma.karibuapp.databinding.FeaturedPartnerRecycleviewBinding
-import com.pauljuma.karibuapp.onboards.viewpager.viewBinding
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.featured_partner_recycleview.view.*
 
 class FeaturedPartnersAdapter:
     RecyclerView.Adapter<FeaturedPartnersAdapter.FeaturedPartnerViewHolder>() {

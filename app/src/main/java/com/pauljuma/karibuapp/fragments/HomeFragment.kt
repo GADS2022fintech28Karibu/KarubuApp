@@ -19,8 +19,6 @@ import com.pauljuma.karibuapp.data.CartItem
 import com.pauljuma.karibuapp.databinding.FragmentHomeBinding
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
-import kotlinx.android.synthetic.main.favorites_recycleview.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
     private val featuredPartnerAdapter: FeaturedPartnersAdapter by lazy { FeaturedPartnersAdapter() }
@@ -60,7 +58,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_basketFragment)
         }*/
         viewBinding.ivSlides.setOnClickListener { v ->
-            (activity as MainActivity).openCloseNavigationDrawer(v)
+            openCloseNavigationDrawer(v)
         }
 
         return viewBinding.root
@@ -85,7 +83,7 @@ class HomeFragment : Fragment() {
     }
 
     fun setUpFeaturedPartnerRecycleView() {
-        rvPopularDishes.apply {
+        viewBinding.rvPopularDishes.apply {
             hasFixedSize()
             adapter = featuredPartnerAdapter
 
@@ -95,7 +93,7 @@ class HomeFragment : Fragment() {
     }
 
     fun setUpFavoriteMealsRecycleview() {
-        rvFavoriteMeals.apply {
+        viewBinding.rvFavoriteMeals.apply {
             hasFixedSize()
             adapter = favoriteMealsAdapter
             layoutManager =
@@ -106,6 +104,15 @@ class HomeFragment : Fragment() {
             val cartItem = CartItem(i.id, i.id, 1)
             cartViewModel.addToCart(cartItem)
 
+        }
+    }
+
+    fun openCloseNavigationDrawer(view: View){
+        val drawer = viewBinding.drawerLayout
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START)
+        }else{
+            drawer.openDrawer(GravityCompat.START)
         }
     }
 }

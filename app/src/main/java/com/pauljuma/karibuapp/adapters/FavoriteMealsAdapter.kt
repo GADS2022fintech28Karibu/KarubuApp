@@ -11,7 +11,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.signature.ObjectKey
 import com.pauljuma.karibuapp.data.FavoriteMealsItem
 import com.pauljuma.karibuapp.databinding.FavoritesRecycleviewBinding
-import kotlinx.android.synthetic.main.favorites_recycleview.view.btnAddToCart
 
 class FavoriteMealsAdapter : RecyclerView.Adapter<FavoriteMealsAdapter.FavoriteMealsAdapterViewHolder>() {
     lateinit var binding: FavoritesRecycleviewBinding
@@ -27,7 +26,7 @@ class FavoriteMealsAdapter : RecyclerView.Adapter<FavoriteMealsAdapter.FavoriteM
         notifyDataSetChanged()
     }
 
-    inner class FavoriteMealsAdapterViewHolder(binding: FavoritesRecycleviewBinding) :
+    inner class FavoriteMealsAdapterViewHolder(val binding: FavoritesRecycleviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private var currentPosition: Int = -1
@@ -59,7 +58,7 @@ class FavoriteMealsAdapter : RecyclerView.Adapter<FavoriteMealsAdapter.FavoriteM
     override fun onBindViewHolder(holder: FavoriteMealsAdapterViewHolder, position: Int) {
         val favoriteItem = favoriteMeal[position]
         holder.bind(favoriteItem, position)
-        holder.itemView.btnAddToCart.setOnClickListener {
+        holder.binding.btnAddToCart.setOnClickListener {
             listener?.invoke(holder.itemView, favoriteMeal[position], position)
             Toast.makeText(holder.itemView.context, "Clicked", Toast.LENGTH_SHORT).show()
         }
