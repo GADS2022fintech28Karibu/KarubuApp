@@ -2,33 +2,21 @@ name: CI
 
 on:
   push:
-    branches:
-    - main
-    - release/*
-    
-on:
-  pull_request:
-    branches:
-    - main
-    
-on:
-  schedule:
-  - cron: "0 2 * * 1-5"
-  
-on:
+  branches: [ master ]
+  pull_request: 
+    branches: [master ]
     
   workflow_dispatch:
   
 jobs:
 
-  my_job:
-    name: deploy to staging
-    runs-on: ubuntu-latest
+ build:
+   runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo KarubuApp!!!
+        run: echo Hello, World!
         
       - name: Run a multi-line script
         run:
