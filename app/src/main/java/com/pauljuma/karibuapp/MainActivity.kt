@@ -2,11 +2,10 @@ package com.pauljuma.karibuapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.pauljuma.karibuapp.database.AppDatabase
-import com.pauljuma.karibuapp.databinding.ActivityMainBinding
 import com.pauljuma.karibuapp.repository.KaribuRepository
 import com.pauljuma.karibuapp.viewmodel.CartViewModel
 import com.pauljuma.karibuapp.viewmodel.CartViewModelFactory
@@ -14,12 +13,11 @@ import com.pauljuma.karibuapp.viewmodel.FavoriteViewModel
 import com.pauljuma.karibuapp.viewmodel.FavoriteViewModelFactory
 
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     lateinit var favoriteViewModel: FavoriteViewModel
     lateinit var cartViewModel: CartViewModel
-    lateinit var binding: ActivityMainBinding
-  
+    lateinit var binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -37,10 +35,11 @@ class MainActivity : AppCompatActivity() {
         favoriteViewModel =
             ViewModelProvider(this, favoriteViewModelFactory).get(FavoriteViewModel::class.java)
 
-        /*
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcFragmentContainer) as NavHostFragment
+
+       val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcFragmentContainer) as NavHostFragment
         val navController = navHostFragment.navController
-        BottomNavigationView.setupWithNavController(navController)
-         */
+
+       // binding.BottomNavigationView.setupWithNavController(navController)
+
     }
 }

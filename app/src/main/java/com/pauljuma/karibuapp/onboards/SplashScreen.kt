@@ -18,7 +18,7 @@ class StartScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_start_screen, container, false)
+        val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
         Handler().postDelayed(
             {
