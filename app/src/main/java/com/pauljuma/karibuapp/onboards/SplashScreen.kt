@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.pauljuma.karibuapp.R
 
 
-class StartScreen : Fragment() {
+class SplashScreen : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

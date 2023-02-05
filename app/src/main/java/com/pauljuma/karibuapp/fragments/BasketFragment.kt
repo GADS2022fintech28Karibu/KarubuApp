@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pauljuma.karibuapp.HomeActivity
 import com.pauljuma.karibuapp.MainActivity
 import com.pauljuma.karibuapp.adapters.BasketAdapter
 import com.pauljuma.karibuapp.databinding.FragmentBasketBinding
@@ -24,7 +25,7 @@ class BasketFragment() : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentBasketBinding.inflate(inflater, container, false)
-        cartViewModel = (activity as MainActivity).cartViewModel
+        cartViewModel = (activity as HomeActivity).cartViewModel
         observeBasketFragment()
 
         return binding.root

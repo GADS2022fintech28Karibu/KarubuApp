@@ -32,7 +32,7 @@
                 android:text="Armaan Restaurant"
                 android:fontFamily="@font/medium"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="155dp"
+                android:layout_marginTop="160dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="175dp"
+                android:layout_marginTop="185dp"
                 >
 
                 <ImageView

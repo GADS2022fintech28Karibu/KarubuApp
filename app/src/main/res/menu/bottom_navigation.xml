@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:title=""
+        android:title="Home"
         android:icon="@drawable/ic_baseline_home"/>
 
     <item
         android:id="@+id/basketFragment"
-        android:title=""
+        android:title="Basket"
         android:icon="@drawable/ic_baseline_add_shopping_cart"/>
 
     <item
         android:id="@+id/bookingDetailsFragment"
-        android:title=""
+        android:title="Details"
         android:icon="@drawable/ic_baseline_payments"/>
 </menu>

@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pauljuma.karibuapp.HomeActivity
 import com.pauljuma.karibuapp.MainActivity
 import com.pauljuma.karibuapp.R
 import com.pauljuma.karibuapp.adapters.FavoriteMealsAdapter
@@ -37,22 +35,22 @@ class HomeFragment : Fragment() {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        favoriteViewModel = (activity as MainActivity).favoriteViewModel
-        cartViewModel = (activity as MainActivity).cartViewModel
+        favoriteViewModel = (activity as HomeActivity).favoriteViewModel
+        cartViewModel = (activity as HomeActivity).cartViewModel
         observeFeaturedPartners()
         observeFavoriteMeals()
 
-        viewBinding.tvSearch.setOnClickListener {
+        /*viewBinding.tvSearch.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
-        }
+        }*/
 
-        val appCompat = requireActivity() as AppCompatActivity
-        val navHostFragment =
-            appCompat.supportFragmentManager.findFragmentById(R.id.fcFragmentContainer) as NavHostFragment
+        //val appCompat = requireActivity() as AppCompatActivity
+       // val navHostFragment =
+        //    appCompat.supportFragmentManager.findFragmentById(R.id.fcFragmentContainer) as NavHostFragment
 
-        val navController = navHostFragment.navController
+      //  val navController = navHostFragment.navController
 
-        viewBinding.BottomNavigationView.setupWithNavController(navController)
+        //viewBinding.BottomNavigationView.setupWithNavController(navController)
 
        /* viewBinding.BottomNavigationView.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_basketFragment)

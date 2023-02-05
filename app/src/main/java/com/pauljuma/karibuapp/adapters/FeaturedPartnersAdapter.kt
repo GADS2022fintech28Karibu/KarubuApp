@@ -40,9 +40,9 @@ class FeaturedPartnersAdapter:
                 tvPartnerName.text = featuredPartnersItem.name
                 Picasso.get().load(featuredPartnerImage[imageId]).into(binding.ivFeaturedPartners)
 
-                root.setOnClickListener {  view->
+               /* root.setOnClickListener {  view->
                    view.findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
-                }
+                }*/
             }
         }
     }
